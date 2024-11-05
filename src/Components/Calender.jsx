@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Calendar() {
+export default function Calender() {
   const [currentDate, setCurrentDate] = useState(new Date(2021, 10, 23)); // November 2021
   
   const daysOfWeek = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
@@ -65,7 +65,7 @@ export default function Calendar() {
   const monthYear = currentDate.toLocaleString('default', { month: 'long', year: 'numeric' });
 
   return (
-    <div className="w-full max-w-sm rounded-lg bg-white shadow-md ">
+    <div className="w-full max-w-sm rounded-lg bg-white shadow-md m-auto">
       <div className="mb-4 flex items-center justify-between">
         <h2 className="text-lg font-bold text-black">{monthYear}</h2>
         <div className="flex gap-2">

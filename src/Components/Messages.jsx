@@ -38,7 +38,7 @@ const Avatar = ({ children, className }) => (
     ];
   
     return (
-      <div className="w-full max-w-md bg-white rounded-lg shadow-md">
+      <div className="w-full max-w-md bg-white rounded-lg shadow-md m-auto">
         <div className="p-6">
           <h2 className="text-xl font-semibold mb-4">Messages</h2>
           <div className="space-y-4">
