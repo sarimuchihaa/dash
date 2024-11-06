@@ -9,26 +9,30 @@ import {
   Trophy,
   Settings,
   Plus,
+  Moon,
 } from "lucide-react"
 
 export default function Sidebar() {
   const [isDarkMode, setIsDarkMode] = useState(false)
 
   return (
-    <div className={`flex h-screen w-[270px] flex-col border-r ${isDarkMode ? "dark" : ""}`} style={{ backgroundColor: '#F8FAFC', position: 'sticky', top: '0' }}>
+    <div
+      className={`flex h-screen w-[270px] flex-col border-r transition-all duration-300 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}
+      style={{ position: 'sticky', top: '0' }}
+    >
       <div className="p-6">
         <div className="flex items-center gap-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-white">
             <Bolt size={18} />
           </div>
-          <span className="text-2xl py-10 font-semibold" style={{ color: '#2563EB' }}>Hiphonic</span>
+          <span className="text-2xl py-10 font-semibold">Hiphonic</span>
         </div>
       </div>
 
       <div className="flex-1 overflow-auto px-4">
         <div className="space-y-6">
           <div className="space-y-1">
-            <div className="text-Meniot font-bold px-2 text-md py-2 tracking-wider text-muted-foreground">
+            <div className="text-Meniot font-bold px-2 text-md py-2 tracking-wider">
               MENU
             </div>
             <nav className="space-y-1">
@@ -37,7 +41,7 @@ export default function Sidebar() {
                 <span style={{ color: '#2563EB' }} className="font-bold mb-2">Dashboard</span>
               </button>
               <button className="flex w-full justify-start gap-2 p-2 text-left hover:bg-accent">
-                <CheckSquare className="mt-2" size={20}/>
+                <CheckSquare className="mt-2" size={20} />
                 <span className="mt-2">My Tasks</span>
               </button>
               <button className="flex w-full justify-start gap-2 p-2 text-left hover:bg-accent">
@@ -53,11 +57,11 @@ export default function Sidebar() {
 
           <div className="space-y-1">
             <div className="flex items-center justify-between px-2">
-              <span className="text-Meniot font-bold px-2 text-md py-2 tracking-wider text-muted-foreground">
+              <span className="text-Meniot font-bold px-2 text-md py-2 tracking-wider">
                 PROJECTS
               </span>
-              <button className="h-6 w-6 text-muted-foreground" style={{ color: '#2563EB' }}>
-                <Plus size={16} className="text-Meniot w-5 h-5"/>
+              <button className="h-6 w-6">
+                <Plus size={16} style={{ color: '#2563EB' }} />
               </button>
             </div>
             <nav className="space-y-1">
@@ -85,7 +89,10 @@ export default function Sidebar() {
             <span>Settings</span>
           </button>
           <div className="flex items-center justify-between px-3 py-2">
-            <span className="text-sm">Dark Mode</span>
+            <span className="text-sm flex items-center">
+              <Moon size={16} className="mr-1 w-5 h-5" />
+              Dark Mode
+            </span>
             <label className="relative inline-flex items-center cursor-pointer">
               <input
                 type="checkbox"

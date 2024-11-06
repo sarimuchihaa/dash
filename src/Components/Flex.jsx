@@ -12,7 +12,7 @@ export default function Flex() {
             <input
               type="search"
               placeholder="Search..."
-              className="w-[400px] h-10 pl-10 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-[400px] h-10 pl-10 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
           
