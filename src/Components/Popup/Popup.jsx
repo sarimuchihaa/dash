@@ -41,7 +41,7 @@ export default function Popup() {
               onClick={() => setIsOpen(false)}
               className="px-4 py-2 bg-indigo-600 m-auto text-white rounded-md hover:bg-indigo-700 transition-colors"
             >
-              Submit feedback
+              Create Project
             </button>
           </div>
         </div>
