@@ -1,11 +1,11 @@
 import Layout from "./Components/Layout/Layout.jsx";
 import Flex from "./Components/Flex.jsx";
-import Recent from "./Components/Recent.jsx";
+// import Recent from "./Components/Recent.jsx";
+// import Calendar from "./Components/Calendar/Calendar.jsx";
 import Activity from "./Components/Activity.jsx";
 import Tasks from "./Components/Tasks.jsx";
-import Calendars from "./Components/Calendars.jsx";
 import Messages from "./Components/Messages.jsx";
-import Calendar from "./Components/Calendar/Calendar.jsx";
+import Projects from "./Components/Projects/Projects.jsx";
 
 
 function App() {
@@ -13,12 +13,12 @@ function App() {
     <>
     <Layout >
         <Flex />
-        <Recent />
+        <Projects />
+        {/* <Recent />
+        <Calendar /> */}
         <Activity />
         <Tasks />
-        <Calendars />
         <Messages />
-        <Calendar />
     </Layout>
     </>
   );

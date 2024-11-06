@@ -1,17 +1,13 @@
+// IMPORTS
 import { Settings, User, CheckSquare, MoreHorizontal, ChevronUp } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { activityData } from "../utils/data.js";
 
+
+
+
+// FRONTEND
 export default function Activity() {
-  const activityData = [
-    { day: 'Sun', value: 30 },
-    { day: 'Mon', value: 50 },
-    { day: 'Tue', value: 35 },
-    { day: 'Wed', value: 65 },
-    { day: 'Thu', value: 50 },
-    { day: 'Fri', value: 45 },
-    { day: 'Sat', value: 40 }
-  ];
-
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (

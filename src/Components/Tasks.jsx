@@ -1,25 +1,14 @@
+// IMPORTS
 import { useState } from "react"
+import { tasks } from "../utils/data.js"  // Import the tasks data
 
-export default function Component() {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: "Create userflow for Hiphonic Application Design",
-      status: "in-review",
-      statusLabel: "In Review",
-      assignees: ["/placeholder.svg", "/placeholder.svg"],
-      completed: true
-    },
-    {
-      id: 2,
-      title: "Homepage design for Dibhub Application",
-      status: "progress",
-      statusLabel: "Progress",
-      assignees: ["/placeholder.svg", "/placeholder.svg"],
-      completed: false
-    }
-  ])
 
+
+
+
+// FRONTEND
+export default function Tasks() {
+  const [tasksState, setTasks] = useState(tasks)
   const getStatusStyles = (status) => {
     switch (status) {
       case "in-review":
@@ -32,7 +21,7 @@ export default function Component() {
   }
 
   const handleCheckboxChange = (taskId) => {
-    setTasks(tasks.map(task => 
+    setTasks(tasksState.map(task => 
       task.id === taskId ? { ...task, completed: !task.completed } : task
     ))
   }
@@ -50,7 +39,7 @@ export default function Component() {
         </div>
 
         <div className="space-y-2">
-          {tasks.map((task) => (
+          {tasksState.map((task) => (
             <div
               key={task.id}
               className="flex items-center gap-4 p-4 bg-white rounded-lg border" // Changed to bg-white

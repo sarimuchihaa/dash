@@ -10,6 +10,10 @@ const CustomDateCalendar = styled(DateCalendar)({
     fontWeight: 'bold',
     color: '#000000',
   },
+  '& .MuiTypography-root.MuiPickersCalendarHeader-yearSelection, & .MuiTypography-root.MuiPickersCalendarHeader-monthSelection': {
+    fontWeight: 'bold',
+    color: '#000000',
+  },
   '& .MuiPickersDay-root.Mui-selected': {
     backgroundColor: '#1976d2',
     color: '#ffffff',
@@ -27,8 +31,10 @@ const CustomDateCalendar = styled(DateCalendar)({
 
 export default function Calendar() {
   return (
+  <div className="w-full max-w-sm rounded-lg bg-white shadow-md m-auto">
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <CustomDateCalendar defaultValue={dayjs()} />
     </LocalizationProvider>
+  </div>
   );
 }

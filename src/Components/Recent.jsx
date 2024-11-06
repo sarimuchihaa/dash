@@ -1,36 +1,16 @@
+// IMPORTS
 import { MoreHorizontal, CheckSquare } from "lucide-react";
+import { projects } from "../utils/data.js";
 
-const projects = [
-  {
-    name: "Hiphonic",
-    progress: 55,
-    tasksCompleted: 8,
-    totalTasks: 15,
-    teamMembers: ["/placeholder.svg", "/placeholder.svg"],
-    progressColor: "bg-blue-500",
-  },
-  {
-    name: "SEO Analytics",
-    progress: 30,
-    tasksCompleted: 8,
-    totalTasks: 40,
-    teamMembers: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
-    progressColor: "bg-pink-500",
-  },
-  {
-    name: "Dibhub App",
-    progress: 89,
-    tasksCompleted: 40,
-    totalTasks: 55,
-    teamMembers: ["/placeholder.svg", "/placeholder.svg"],
-    progressColor: "bg-yellow-500",
-  },
-];
 
+
+
+
+// FRONTEND
 export default function Recent() {
   return (
-    <div className="flex justify-center items-center min-h-[45vh] bg-white">
-      <div className="bg-white p-12 border-2 rounded-lg shadow-lg w-full max-w-3xl m-6">
+    <div className="flex justify-center items-center min-h-[45vh] bg-white w-full">
+      <div className="bg-white p-12 border-2 rounded-lg shadow-lg w-full m-6">
         <div className="space-y-8">
           <div className="space-y-4">
             <div className="flex items-center justify-between">
