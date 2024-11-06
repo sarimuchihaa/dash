@@ -1,6 +1,6 @@
 // IMPORTS
 import { useState } from "react"
-import { tasks } from "../utils/data.js"  // Import the tasks data
+import { tasks } from "../../utils/data.js"
 
 
 

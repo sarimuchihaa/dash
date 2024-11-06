@@ -1,5 +1,5 @@
 import React from 'react';
-import Recent from '../Recent.jsx';
+import Recent from '../Recent/Recent.jsx';
 import Calendar from '../Calendar/Calendar.jsx';
 
 const Projects = () => {

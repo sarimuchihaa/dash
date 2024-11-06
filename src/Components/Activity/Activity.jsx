@@ -1,7 +1,7 @@
 // IMPORTS
 import { Settings, User, CheckSquare, MoreHorizontal, ChevronUp } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
-import { activityData } from "../utils/data.js";
+import { activityData } from "../../utils/data.js";
 
 
 

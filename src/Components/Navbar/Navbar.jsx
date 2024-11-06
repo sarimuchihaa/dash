@@ -1,6 +1,6 @@
 import { Bell, ChevronDown, Search } from "lucide-react"
 
-export default function Flex() {
+export default function Navbar() {
   return (
     <header className="border-b bg-white">
       <div className="flex h-16 items-center px-4 md:px-6">

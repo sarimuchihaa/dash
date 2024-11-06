@@ -1,6 +1,6 @@
 // IMPORTS
 import { MoreHorizontal, CheckSquare } from "lucide-react";
-import { projects } from "../utils/data.js";
+import { projects } from "../../utils/data.js";
 
 
 
