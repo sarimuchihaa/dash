@@ -1,5 +1,12 @@
+// IMPORTS
 import { Bell, ChevronDown, Search } from "lucide-react"
 
+
+
+
+
+
+// FRONTEND
 export default function Navbar() {
   return (
     <header className="border-b bg-white">

@@ -1,6 +1,12 @@
+// IMPORTS
 import React from 'react';
 import Sidebar from '../Sidebar/Sidebar.jsx';
 
+
+
+
+
+// FRONTEND
 const Layout = ({ children }) => {
   return (
     <div className="flex">

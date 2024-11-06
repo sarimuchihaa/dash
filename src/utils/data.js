@@ -62,3 +62,28 @@ export const tasks =
     }
 ]
 
+
+// MESSAGES DATA
+export const messages = [
+  {
+    id: 1,
+    sender: "Andreana Viola",
+    avatar: "/placeholder.svg?height=40&width=40",
+    message: "Hi, how are you today?",
+    time: "08:30",
+  },
+  {
+    id: 2,
+    sender: "Francesco Long",
+    avatar: "/placeholder.svg?height=40&width=40",
+    message: "Hi @Angel, I hope you are doing well...",
+    time: "07:00",
+  },
+  {
+    id: 3,
+    sender: "Alexandra Michu",
+    avatar: "/placeholder.svg?height=40&width=40",
+    message: "Hi, how are you today?",
+    time: "23/11",
+  },
+];

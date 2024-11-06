@@ -1,42 +1,24 @@
+// IMPORTS
+import { messages } from "../../utils/data.js";
 const Avatar = ({ children, className }) => (
     <div className={`rounded-full border border-gray-300 flex items-center justify-center ${className}`}>
       {children}
     </div>
-  );
-  
-  const AvatarImage = ({ src, alt }) => (
+);
+
+
+const AvatarImage = ({ src, alt }) => (
     <img src={src} alt={alt} className="rounded-full w-full h-full object-cover" />
-  );
+);
+
+
+const AvatarFallback = ({ children }) => (
+  <span className="text-gray-500 text-lg font-bold">{children}</span>
+);
   
-  const AvatarFallback = ({ children }) => (
-    <span className="text-gray-500 text-lg font-bold">{children}</span>
-  );
-  
-  export default function Messages() {
-    const messages = [
-      {
-        id: 1,
-        sender: "Andreana Viola",
-        avatar: "/placeholder.svg?height=40&width=40",
-        message: "Hi, how are you today?",
-        time: "08:30",
-      },
-      {
-        id: 2,
-        sender: "Francesco Long",
-        avatar: "/placeholder.svg?height=40&width=40",
-        message: "Hi @Angel, I hope you are doing well...",
-        time: "07:00",
-      },
-      {
-        id: 3,
-        sender: "Alexandra Michu",
-        avatar: "/placeholder.svg?height=40&width=40",
-        message: "Hi, how are you today?",
-        time: "23/11",
-      },
-    ];
-  
+
+// FRONTEND
+export default function Messages() {
     return (
       <div className="w-full max-w-md bg-white rounded-lg shadow-md m-auto">
         <div className="p-6">

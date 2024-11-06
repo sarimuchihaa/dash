@@ -1,17 +1,14 @@
-import { useState } from "react"
-import {
-  Bolt,
-  LayoutGrid,
-  CheckSquare,
-  MessageCircle,
-  Trophy,
-  Settings,
-  Plus,
-  Moon,
-} from "lucide-react"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Bolt, LayoutGrid, CheckSquare, MessageCircle, Trophy, Settings, Plus, Moon } from "lucide-react";
 
 export default function Sidebar() {
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleNewProjectClick = () => {
+    navigate("/new-project");
+  };
 
   return (
     <div
@@ -58,7 +55,7 @@ export default function Sidebar() {
               <span className="text-Meniot font-bold px-2 text-md py-2 tracking-wider">
                 PROJECTS
               </span>
-              <button className="h-6 w-6">
+              <button className="h-6 w-6" onClick={handleNewProjectClick}>
                 <Plus size={16} style={{ color: '#2563EB' }} />
               </button>
             </div>
@@ -105,5 +102,5 @@ export default function Sidebar() {
         </nav>
       </div>
     </div>
-  )
+  );
 }
