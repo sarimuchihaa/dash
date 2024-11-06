@@ -7,6 +7,7 @@ import Tasks from "./Components/Tasks/Tasks.jsx";
 import Messages from "./Components/Messages/Messages.jsx";
 import NewProject from "./Pages/NewProject.jsx";
 
+
 // APP
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
               <Messages />
             </>
           } />
-          <Route path="/new-project" element={<NewProject />} />
+          <Route path="/new-project" element={<NewProject />}/>
         </Routes>
       </Layout>
     </Router>

@@ -1,8 +1,18 @@
+// IMPORTS
 import React from 'react'
+import Popup from '../Components/Popup/Popup.jsx'
 
+
+
+
+
+// FRONTEND
 const NewProject = () => {
   return (
-    <div>NewProject 🍎</div>
+    <div>
+      NewProject 🍎
+      <Popup />
+    </div>
   )
 }
 

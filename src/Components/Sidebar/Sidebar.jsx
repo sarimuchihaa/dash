@@ -1,15 +1,18 @@
+// IMPORTS
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Bolt, LayoutGrid, CheckSquare, MessageCircle, Trophy, Settings, Plus, Moon } from "lucide-react";
 
+
+
+
+// FRONTEND
 export default function Sidebar() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const navigate = useNavigate(); // Initialize useNavigate
-
+  const navigate = useNavigate(); 
   const handleNewProjectClick = () => {
     navigate("/new-project");
   };
-
   return (
     <div
       className={`flex h-screen w-[270px] flex-col border-r transition-all duration-300 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}
@@ -20,7 +23,7 @@ export default function Sidebar() {
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-white">
             <Bolt size={18} />
           </div>
-          <span className="text-2xl py-10 font-semibold">Hiphonic</span>
+          <Link to="/" className="text-2xl py-10 font-semibold">Hiphonic</Link>
         </div>
       </div>
 
@@ -31,10 +34,10 @@ export default function Sidebar() {
               MENU
             </div>
             <nav className="space-y-1">
-              <button className="flex w-full justify-start gap-2 p-2 text-left hover:bg-accent" style={{ backgroundColor: '#E5E7EB' }}>
-                <LayoutGrid size={20} className="mt-1" style={{ color: '#2563EB' }} />
-                <span style={{ color: '#2563EB' }} className="font-bold mb-2">Dashboard</span>
-              </button>
+            <Link to="/" className="flex w-full justify-start gap-2 p-2 text-left hover:bg-accent" style={{ backgroundColor: '#E5E7EB' }}>
+              <LayoutGrid size={20} className="mt-1" style={{ color: '#2563EB' }} />
+              <span style={{ color: '#2563EB' }} className="font-bold mb-2">Dashboard</span>
+            </Link>
               <button className="flex w-full justify-start gap-2 p-2 text-left hover:bg-accent">
                 <CheckSquare className="mt-2" size={20} />
                 <span className="mt-2">My Tasks</span>
