@@ -11,7 +11,7 @@ export default function Activity() {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-popover p-3 rounded-lg shadow-lg border">
+        <div className="bg-popover p-3 rounded-xl shadow-lg border">
           <p className="font-medium">5 tasks</p>
           <p className="text-sm text-muted-foreground">Almost completed</p>
         </div>
@@ -31,10 +31,10 @@ export default function Activity() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-[45vh] bg-white">
-      <div className="space-y-4 m-4 w-full max-w-3xl"> {/* Updated max-w */}
+    <div className="flex justify-center items-center min-h-[45vh] bg-white w-full">
+      <div className="bg-white p-12 border-2 rounded-lg shadow-lg w-full m-6">
         <div className="grid gap-4 md:grid-cols-2">
-          <div className="bg-white border rounded-lg shadow-md p-4 space-y-4">
+          <div className="bg-white border rounded-xl shadow-md p-4 space-y-4">
             <div className="flex items-center justify-between">
               <h2 className="text-lg font-semibold ml-4">Activity</h2>
               <div className="flex items-center gap-2">
@@ -75,17 +75,17 @@ export default function Activity() {
             </div>
           </div>
 
-          <div className="bg-white border rounded-lg shadow-md p-4 space-y-4">
+          <div className="bg-white border rounded-xl shadow-md p-4 space-y-4">
             <div className="flex items-center justify-between">
               <h2 className="text-lg font-semibold">Task Summary</h2>
-              <button className="h-8 w-8 rounded-lg hover:bg-accent flex items-center justify-center">
+              <button className="h-8 w-8 rounded-xl hover:bg-accent flex items-center justify-center">
                 <MoreHorizontal className="h-16 w-16" />
               </button>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
-              <div className="border rounded-lg shadow-md p-4 bg-blue-500 text-white">
+              <div className="border rounded-xl shadow-md p-4 bg-blue-500 text-white">
                 <div className="flex flex-col items-center gap-2">
-                  <div className="rounded-lg bg-blue-600/50 p-3">
+                  <div className="rounded-xl bg-blue-600/50 p-3">
                     <Settings className="h-5 w-5" />
                   </div>
                   <div className="text-center">
@@ -95,9 +95,9 @@ export default function Activity() {
                 </div>
               </div>
 
-              <div className="border rounded-lg shadow-md p-4 bg-sky-500 text-white">
+              <div className="border rounded-xl shadow-md p-4 bg-sky-500 text-white">
                 <div className="flex flex-col items-center gap-2">
-                  <div className="rounded-lg bg-sky-600/50 p-3">
+                  <div className="rounded-xl bg-sky-600/50 p-3">
                     <User className="h-5 w-5" />
                   </div>
                   <div className="text-center">
@@ -107,9 +107,9 @@ export default function Activity() {
                 </div>
               </div>
 
-              <div className="border rounded-lg shadow-md p-4 bg-gray-100">
+              <div className="border rounded-xl shadow-md p-4 bg-gray-100">
                 <div className="flex flex-col items-center gap-2">
-                  <div className="rounded-lg bg-gray-200 p-3">
+                  <div className="rounded-xl bg-gray-200 p-3">
                     <CheckSquare className="h-5 w-5" />
                   </div>
                   <div className="text-center">
@@ -119,7 +119,7 @@ export default function Activity() {
                 </div>
               </div>
             </div>
-            <div className="border rounded-lg shadow-md p-4">
+            <div className="border rounded-xl shadow-md p-4">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">On-time Completion Rate</p>

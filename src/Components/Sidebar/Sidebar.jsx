@@ -27,6 +27,7 @@ export default function Sidebar() {
         </div>
       </div>
 
+
       <div className="flex-1 overflow-auto px-4">
         <div className="space-y-6">
           <div className="space-y-1">
@@ -52,6 +53,7 @@ export default function Sidebar() {
               </button>
             </nav>
           </div>
+
 
           <div className="space-y-1">
             <div className="flex items-center justify-between px-2">
@@ -79,6 +81,7 @@ export default function Sidebar() {
           </div>
         </div>
       </div>
+
 
       <div className="border-t p-4">
         <nav className="space-y-1">
