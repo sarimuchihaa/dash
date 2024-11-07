@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Bolt, LayoutGrid, CheckSquare, MessageCircle, Trophy, Settings, Plus, Moon } from "lucide-react";
+import { useProjects } from "../ProjectContext/ProjectContext.jsx";
 
 
 
@@ -9,10 +10,24 @@ import { Bolt, LayoutGrid, CheckSquare, MessageCircle, Trophy, Settings, Plus, M
 // FRONTEND
 export default function Sidebar() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const { projects } = useProjects();
+  const [newProjectName, setNewProjectName] = useState("");
+  const [isAddingProject, setIsAddingProject] = useState(false);
   const navigate = useNavigate(); 
-  const handleNewProjectClick = () => {
-    navigate("/new-project");
+
+
+  const handleAddProject = () => {
+    if (newProjectName.trim() !== "") {
+      addProject({ name: newProjectName, color: "bg-blue-500" });  // Add the project with a color (you can change the color as needed)
+      setNewProjectName("");  // Reset input
+      setIsAddingProject(false); // Close the input fiaeld
+    }
   };
+
+  const plusNavigate = () => {
+    navigate("/new-project")
+  }
+
   return (
     <div
       className={`flex h-screen w-[270px] flex-col border-r transition-all duration-300 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}
@@ -60,23 +75,46 @@ export default function Sidebar() {
               <span className="text-Meniot font-bold px-2 text-md py-2 tracking-wider">
                 PROJECTS
               </span>
-              <button className="h-6 w-6" onClick={handleNewProjectClick}>
+              <button className="h-6 w-6" onClick={plusNavigate}>
                 <Plus size={16} style={{ color: '#2563EB' }} />
               </button>
             </div>
+
+
+            {/* Conditionally render the input field to add a new project */}
+            {isAddingProject && (
+              <div className="flex items-center gap-2 p-2">
+                <input
+                  type="text"
+                  placeholder="Enter project name"
+                  value={newProjectName}
+                  onChange={(e) => setNewProjectName(e.target.value)}
+                  className="border p-2 w-full"
+                />
+                <button
+                  className="text-blue-500"
+                  onClick={handleAddProject}
+                >
+                  Add
+                </button>
+                <button
+                  className="text-gray-500"
+                  onClick={() => setIsAddingProject(false)} // Close the input field
+                >
+                  Cancel
+                </button>
+              </div>
+            )}
+
+
+
             <nav className="space-y-1">
-              <button className="flex items-center w-full justify-start gap-2 p-2 text-left hover:bg-accent">
-                <div className="h-2 w-2 rounded-full bg-Sicake" />
-                <span className="flex-1 font-bold">Website Design</span>
-              </button>
-              <button className="flex items-center w-full justify-start gap-2 p-2 text-left hover:bg-accent">
-                <div className="h-2 w-2 rounded-full bg-Macoke" />
-                <span className="flex-1 font-bold">SEO Analytics</span>
-              </button>
-              <button className="flex items-center w-full justify-start gap-2 p-2 text-left hover:bg-accent">
-                <div className="h-2 w-2 rounded-full bg-Hiphone" />
-                <span className="flex-1 font-bold">Hiphonic App</span>
-              </button>
+            {projects.map((project, index) => (
+                <button key={index} className="flex items-center w-full justify-start gap-2 p-2 text-left hover:bg-accent">
+                  <div className={`h-2 w-2 rounded-full ${project.color}`} />
+                  <span className="flex-1 font-bold">{project.name}</span>
+                </button>
+            ))}
             </nav>
           </div>
         </div>

@@ -6,12 +6,14 @@ import Activity from "./Components/Activity/Activity.jsx";
 import Tasks from "./Components/Tasks/Tasks.jsx";
 import Messages from "./Components/Messages/Messages.jsx";
 import NewProject from "./Pages/NewProject.jsx";
+import { ProjectProvider } from "./Components/ProjectContext/ProjectContext.jsx";
 
 
 // APP
 function App() {
   return (
     <>
+    <ProjectProvider>
     <Router>
       <Layout>
         <Navbar />
@@ -28,6 +30,7 @@ function App() {
         </Routes>
       </Layout>
     </Router>
+    </ProjectProvider>
     </>
   );
 }

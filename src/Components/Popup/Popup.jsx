@@ -1,6 +1,7 @@
 // IMPORTS
 import { X } from "lucide-react";
 import { useState } from "react";
+import { useProjects } from "../ProjectContext/ProjectContext.jsx";
 
 
 
@@ -10,6 +11,16 @@ import { useState } from "react";
 export default function Popup() {
   const [isOpen, setIsOpen] = useState(true);
   const [feedback, setFeedback] = useState("");
+  const { addProject } = useProjects();
+
+  const handleCreateProject = () => {
+    if (feedback.trim()) {
+      addProject(feedback.trim());
+      setFeedback(""); 
+      setIsOpen(false);
+    }
+  };
+
   if (!isOpen) return null;
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4">
@@ -36,10 +47,10 @@ export default function Popup() {
             />
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-center">
             <button
-              onClick={() => setIsOpen(false)}
-              className="px-4 py-2 bg-indigo-600 m-auto text-white rounded-md hover:bg-indigo-700 transition-colors"
+              onClick={handleCreateProject}
+              className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors"
             >
               Create Project
             </button>
