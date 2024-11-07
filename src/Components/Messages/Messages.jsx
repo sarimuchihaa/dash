@@ -20,9 +20,9 @@ const AvatarFallback = ({ children }) => (
 // FRONTEND
 export default function Messages() {
     return (
-      <div className="w-full max-w-md bg-white rounded-lg shadow-md m-auto">
-        <div className="p-6">
-          <h2 className="text-xl font-semibold mb-4">Messages</h2>
+      <div className="w-full max-w-md bg-white rounded-lg shadow-md m-auto -mt-2">
+        <div className="p-4">
+          <h2 className="text-black font-bold text-xl mb-4 text-md">Messages</h2>
           <div className="space-y-4">
             {messages.map((message) => (
               <div key={message.id} className="flex items-center gap-3">
@@ -42,7 +42,7 @@ export default function Messages() {
           </div>
           <a
             href="#"
-            className="block text-center text-sm text-muted-foreground hover:text-primary mt-4"
+            className="text-black font-bold text-md block text-center text-muted-foreground hover:text-primary mt-4"
           >
             See All
           </a>

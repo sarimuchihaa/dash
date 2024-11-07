@@ -27,13 +27,13 @@ export default function Tasks() {
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4">
-      <div className="space-y-4">
+    <div className="w-full max-w-4xl mx-auto p-4 ml-2">
+      <div className="space-y-8">
         <div className="flex justify-between">
           <div className="flex items-center gap-2">
             <h2 className="text-lg font-semibold">Task Today (10)</h2>
           </div>
-          <a href="#" className="text-sm text-blue-600 hover:text-blue-700">
+          <a href="#" className="text-md text-gray-400 text-bold">
             See All
           </a>
         </div>
@@ -42,7 +42,7 @@ export default function Tasks() {
           {tasksState.map((task) => (
             <div
               key={task.id}
-              className="flex items-center gap-4 p-4 bg-white rounded-lg border" // Changed to bg-white
+              className="flex items-center gap-4 p-4 bg-white rounded-lg border"
             >
               <input 
                 type="checkbox"
@@ -52,7 +52,7 @@ export default function Tasks() {
               />
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
-                  <p className="text-sm font-medium truncate">
+                  <p className="text-black text-md font-bold truncate">
                     {task.title}
                   </p>
                 </div>
