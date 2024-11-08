@@ -1,9 +1,24 @@
-import React from 'react'
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Projects from '../../Components/Projects/Projects';
+import Activity from '../../Components/Activity/Activity';
+import MyTask from '../../Components/MyTask/MyTask';
+import NewProject from '../NewProject/NewProject';
 
-const Dashboard = () => {
+
+export const Dashboard = () => {
   return (
-    <div>Contains all route for App.jsx</div>
-  )
+    <div>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Projects />
+            <Activity />
+            <MyTask />
+            <NewProject />
+          </>
+        } />
+      </Routes>
+    </div>
+  );
 }
-
-export default Dashboard

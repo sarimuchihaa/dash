@@ -8,19 +8,19 @@ export default function Sidebar() {
   const { projects } = useProjects();
   const [newProjectName, setNewProjectName] = useState("");
   const [isAddingProject, setIsAddingProject] = useState(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true); // New state to toggle sidebar
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const navigate = useNavigate();
 
   const handleAddProject = () => {
     if (newProjectName.trim() !== "") {
-      addProject({ name: newProjectName, color: "bg-blue-500" });  // Add the project with a color (you can change the color as needed)
-      setNewProjectName("");  // Reset input
-      setIsAddingProject(false); // Close the input field
+      addProject({ name: newProjectName, color: "bg-blue-500" }); 
+      setNewProjectName("");
+      setIsAddingProject(false); 
     }
   };
 
   const plusNavigate = () => {
-    navigate("/new-project");
+    navigate("/");
   };
 
   return (
@@ -77,7 +77,6 @@ export default function Sidebar() {
               </button>
             </div>
 
-            {/* Conditionally render the input field to add a new project */}
             {isAddingProject && (
               <div className="flex items-center gap-2 p-2">
                 <input
@@ -95,7 +94,7 @@ export default function Sidebar() {
                 </button>
                 <button
                   className="text-gray-500"
-                  onClick={() => setIsAddingProject(false)} // Close the input field
+                  onClick={() => setIsAddingProject(false)} 
                 >
                   Cancel
                 </button>

@@ -6,9 +6,9 @@ export const useProjects = () => useContext(ProjectContext);
 
 export function ProjectProvider({ children }) {
   const defaultProjects = [
-    { name: "Website Design", color: "bg-blue-500" },
-    { name: "SEO Analytics", color: "bg-green-500" },
-    { name: "Hiphonic App", color: "bg-purple-500" }
+    { name: "Website Design", color: "bg-purple-500" },
+    { name: "SEO Analytics",  color: "bg-yellow-500" },
+    { name: "Hiphonic App",   color: "bg-green-500" }
   ];
 
   const [projects, setProjects] = useState(defaultProjects);
