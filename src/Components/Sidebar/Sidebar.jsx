@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Bolt, LayoutGrid, CheckSquare, MessageCircle, Trophy, Settings, Plus, Moon, Menu } from "lucide-react";
 import { useProjects } from "../ProjectContext/ProjectContext.jsx";
+import Popup from "../Popup/Popup.jsx";
 
 export default function Sidebar() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -9,18 +10,20 @@ export default function Sidebar() {
   const [newProjectName, setNewProjectName] = useState("");
   const [isAddingProject, setIsAddingProject] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);  // Add modal state
   const navigate = useNavigate();
 
   const handleAddProject = () => {
     if (newProjectName.trim() !== "") {
-      addProject({ name: newProjectName, color: "bg-blue-500" }); 
+      addProject({ name: newProjectName, color: "bg-blue-500" });
       setNewProjectName("");
-      setIsAddingProject(false); 
+      setIsAddingProject(false);
     }
   };
 
   const plusNavigate = () => {
-    navigate("/");
+    navigate("/"); // Navigate to the root URL
+    setIsModalOpen(true); // Open the modal on root URL
   };
 
   return (
@@ -94,7 +97,7 @@ export default function Sidebar() {
                 </button>
                 <button
                   className="text-gray-500"
-                  onClick={() => setIsAddingProject(false)} 
+                  onClick={() => setIsAddingProject(false)}
                 >
                   Cancel
                 </button>
@@ -137,6 +140,9 @@ export default function Sidebar() {
           </div>
         </nav>
       </div>
+
+      {/* Add Popup Modal here */}
+      {isModalOpen && <Popup onClose={() => setIsModalOpen(false)} />}
     </div>
   );
 }
