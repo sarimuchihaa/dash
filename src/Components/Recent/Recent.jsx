@@ -2,15 +2,11 @@
 import { MoreHorizontal, CheckSquare } from "lucide-react";
 import { projects } from "../../utils/data.js";
 
-
-
-
-
 // FRONTEND
 export default function Recent() {
   return (
-    <div className="flex justify-center items-center min-h-[45vh] bg-white w-full">
-      <div className="bg-white p-12 border-2 rounded-lg shadow-lg w-full m-6">
+    <div className="flex justify-center md:justify-start items-center min-h-[45vh] bg-white w-full">
+      <div className="bg-white p-8 lg:p-4 border-2 rounded-lg shadow-lg md:w-2/5 lg:w-1/2 xl:w-4/5 2xl:w-full m-6">
         <div className="space-y-8">
           <div className="space-y-4">
             <div className="flex items-center justify-between">
@@ -19,9 +15,9 @@ export default function Recent() {
                 <MoreHorizontal className="h-16 w-16" />
               </button>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 2xl:grid-cols-3">
               {projects.map((project, index) => (
-                <div key={index} className="p-5 border rounded-md shadow-md space-y-4 bg-first">
+                <div key={index} className="p-4 border rounded-md shadow-md space-y-4 bg-first">
                   <div className="flex items-center justify-between">
                     <h3 className="font-semibold">{project.name}</h3>
                     <button className="h-8 w-8 rounded-lg hover:bg-accent flex items-center justify-center">
