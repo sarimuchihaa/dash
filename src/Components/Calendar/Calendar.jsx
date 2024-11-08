@@ -8,22 +8,22 @@ import { styled } from '@mui/material/styles';
 
 // FRONTEND
 const CustomDateCalendar = styled(DateCalendar)(() => ({
-  width: '50%', // Default width for smaller screens
-  margin: 'auto', // Center the calendar horizontally
+  width: '50%', 
+  margin: 'auto', 
   '& .MuiDayCalendar-weekDayLabel': {
     fontWeight: 'bold',
     color: '#000000',
-    textAlign: 'center', // Center week day labels
+    textAlign: 'center', 
   },
   '& .MuiTypography-root.MuiPickersCalendarHeader-yearSelection, & .MuiTypography-root.MuiPickersCalendarHeader-monthSelection': {
     fontWeight: 'bold',
     color: '#000000',
-    textAlign: 'center', // Center the month and year selector
+    textAlign: 'center',
   },
   '& .MuiTypography-root.MuiPickersCalendarHeader': {
     display: 'flex',
-    justifyContent: 'center', // Center the header content horizontally
-    textAlign: 'center', // Ensure the text in the header is also centered
+    justifyContent: 'center', 
+    textAlign: 'center', 
   },
   '& .MuiPickersDay-root.Mui-selected': {
     backgroundColor: '#1976d2',
@@ -46,14 +46,13 @@ export default function Calendar() {
       <CustomDateCalendar
         defaultValue={dayjs()}
         sx={{
-          // Adjust size for larger screens using media queries
           '@media (min-width: 1280px)': {
-            width: '40%', // Decrease width for xl screens
+            width: '40%', 
           },
-          // Ensure the calendar is aligned left on medium screens and larger
+
           '@media (min-width: 768px)': {
-            marginLeft: 0, // Remove margin-left for medium and above
-            marginRight: 'auto', // Align to the left side
+            marginLeft: 0, 
+            marginRight: 'auto', 
           },
         }}
       />

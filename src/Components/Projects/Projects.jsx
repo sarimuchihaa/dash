@@ -1,4 +1,3 @@
-
 // IMPORTS
 import React from 'react';
 import Recent from '../Recent/Recent.jsx';
