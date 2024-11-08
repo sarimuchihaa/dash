@@ -4,8 +4,9 @@ import Layout from "./Components/Layout/Layout.jsx";
 import Navbar from "./Components/Navbar/Navbar.jsx";
 import Projects from "./Components/Projects/Projects.jsx";
 import Activity from "./Components/Activity/Activity.jsx";
-import MyTasks from "./Components/MyTasks/MyTasks.jsx";
-import NewProject from "./Pages/NewProject.jsx";
+import MyTasks from "./Pages/MyTasks/MyTasks.jsx";
+import NewProject from "./Pages/NewProject/NewProject.jsx";
+
 
 
 // APP
