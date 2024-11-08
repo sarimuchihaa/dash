@@ -4,9 +4,8 @@ import Layout from "./Components/Layout/Layout.jsx";
 import Navbar from "./Components/Navbar/Navbar.jsx";
 import Projects from "./Components/Projects/Projects.jsx";
 import Activity from "./Components/Activity/Activity.jsx";
-import MyTasks from "./Pages/MyTasks/MyTasks.jsx";
+import MyTask from "./Components/MyTask/MyTask.jsx";
 import NewProject from "./Pages/NewProject/NewProject.jsx";
-
 
 
 // APP
@@ -22,7 +21,7 @@ function App() {
             <>
               <Projects />
               <Activity />
-              <MyTasks />
+              <MyTask />
 
             </>
           } />
