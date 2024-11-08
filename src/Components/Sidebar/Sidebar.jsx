@@ -11,7 +11,6 @@ export default function Sidebar() {
   const [isAddingProject, setIsAddingProject] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);  // Add modal state
-  const navigate = useNavigate();
 
   const handleAddProject = () => {
     if (newProjectName.trim() !== "") {
@@ -22,7 +21,6 @@ export default function Sidebar() {
   };
 
   const plusNavigate = () => {
-    navigate("/"); // Navigate to the root URL
     setIsModalOpen(true); // Open the modal on root URL
   };
 
