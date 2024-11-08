@@ -5,8 +5,8 @@ import { projects } from "../../utils/data.js";
 // FRONTEND
 export default function Recent() {
   return (
-    <div className="flex justify-center md:justify-start items-center min-h-[45vh] bg-white w-full">
-      <div className="bg-white p-8 lg:p-4 border-2 rounded-lg shadow-lg md:w-2/5 lg:w-1/2 xl:w-4/5 2xl:w-full m-6">
+    <div className="flex justify-center sm:justify-start items-center min-h-[45vh] bg-white w-full">
+      <div className="bg-white p-8 lg:p-4 border-2 rounded-lg shadow-lg sm:w-full md:w-1/3 lg:w-1/2 xl:w-4/5 2xl:w-full m-6">
         <div className="space-y-8">
           <div className="space-y-4">
             <div className="flex items-center justify-between">
