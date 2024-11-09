@@ -7,7 +7,7 @@ export const projects =
       tasksCompleted: 8,
       totalTasks: 15,
       teamMembers: ["/placeholder.svg", "/placeholder.svg"],
-      progressColor: "bg-blue-500",
+      progressColor: "bg-Fifst",
     },
     {
       name: "SEO Analytics",
@@ -15,7 +15,7 @@ export const projects =
       tasksCompleted: 8,
       totalTasks: 40,
       teamMembers: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
-      progressColor: "bg-pink-500",
+      progressColor: "bg-Sisst",
     },
     {
       name: "Dibhub App",
@@ -23,7 +23,7 @@ export const projects =
       tasksCompleted: 40,
       totalTasks: 55,
       teamMembers: ["/placeholder.svg", "/placeholder.svg"],
-      progressColor: "bg-yellow-500",
+      progressColor: "bg-Thtst",
     },
 ];
 
