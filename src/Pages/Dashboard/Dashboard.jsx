@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Projects from '../../Components/Projects/Projects';
-import Activity from '../../Components/Activity/Activity';
-import MyTask from '../../Components/MyTask/MyTask';
+import Projects from '../../Components/Projects/Projects.jsx';
+import Activities from '../../Components/Activities/Activities.jsx';
+import Tasks from '../../Components/Tasks/Tasks.jsx';
 
 
 export const Dashboard = () => {
@@ -12,8 +12,8 @@ export const Dashboard = () => {
         <Route path="/" element={
           <>
             <Projects />
-            <Activity />
-            <MyTask />
+            <Activities />
+            <Tasks />
           </>
         } />
       </Routes>

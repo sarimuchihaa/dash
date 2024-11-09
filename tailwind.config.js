@@ -10,6 +10,7 @@ export default {
         first:   '#F8FAFC',
         horin:   '#66768D',
         zorin:   '#65758C',
+        proj1:   '#2563EB',
         second:  '#D3D3D3',
         third:   '#4B515F',
         four:    '#2C3344',

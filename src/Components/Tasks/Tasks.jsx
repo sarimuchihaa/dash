@@ -27,7 +27,7 @@ export default function Tasks() {
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4 ml-2">
+    <div className="w-full max-w-4xl">
       <div className="space-y-8">
         <div className="flex justify-between">
           <div className="flex items-center gap-2">

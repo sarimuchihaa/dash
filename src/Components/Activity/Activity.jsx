@@ -31,12 +31,12 @@ export default function Activity() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-[45vh] bg-white w-full">
-      <div className="bg-white p-12 border-2 rounded-lg shadow-lg w-full m-6">
+    <div className="flex justify-center items-center min-h-[45vh] w-full">
+      <div className="rounded-lg shadow-lg w-full m-6">
         <div className="grid gap-4 md:grid-cols-2">
           <div className="bg-white border rounded-xl shadow-md p-4 space-y-4">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold ml-4">Activity</h2>
+              <h2 className="text-lg font-semibold">Activity</h2>
               <div className="flex items-center gap-2">
                 <select className="border rounded-lg p-2 w-[100px]">
                   <option value="weekly">Weekly</option>
