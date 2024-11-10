@@ -1,4 +1,5 @@
 // IMPORTS
+import { MoreHorizontal } from "lucide-react";
 import { useState } from "react"
 import { tasks } from "../../utils/data.js"
 
@@ -27,14 +28,16 @@ export default function Tasks() {
   }
 
   return (
-    <div className="w-full max-w-4xl">
+    <div className="w-full max-w-6xl m-5">
       <div className="space-y-8">
         <div className="flex justify-between">
           <div className="flex items-center gap-2">
-            <h2 className="text-lg font-semibold">Task Today (10)</h2>
+          <h2 className="text-xl font-bold ml-4">
+            Task Today <span className="text-Stasks font-normal">(10)</span>
+          </h2>
           </div>
-          <a href="#" className="text-md text-gray-400 text-bold">
-            See All
+          <a href="#" className="text-lg text-Stasks text-bold">
+            See All &gt;
           </a>
         </div>
 
@@ -42,7 +45,7 @@ export default function Tasks() {
           {tasksState.map((task) => (
             <div
               key={task.id}
-              className="flex items-center gap-4 p-4 bg-white rounded-lg border"
+              className="flex items-center gap-4 p-6 bg-white rounded-lg border h-auto"
             >
               <input 
                 type="checkbox"
@@ -52,7 +55,7 @@ export default function Tasks() {
               />
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
-                  <p className="text-black text-md font-bold truncate">
+                  <p className="text-black text-md font-semibold truncate">
                     {task.title}
                   </p>
                 </div>
@@ -75,8 +78,8 @@ export default function Tasks() {
                     </div>
                   ))}
                 </div>
-                <button className="h-8 w-8 rounded-lg hover:bg-gray-300 flex items-center justify-center">
-                  <span className="h-4 w-4">...</span>
+                <button className="h-8 w-8 rounded-lg hover:bg-accent flex items-center justify-center text-horin">
+                    <MoreHorizontal className="h-8 w-8 text-horin" />
                 </button>
               </div>
             </div>

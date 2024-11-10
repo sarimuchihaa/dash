@@ -36,7 +36,7 @@ export default function Activity() {
         <div className="grid gap-4 md:grid-cols-2">
           <div className="bg-white border rounded-xl shadow-md p-4 space-y-4">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold">Activity</h2>
+              <h2 className="text-xl font-bold">Activity</h2>
               <div className="flex items-center gap-2">
                 <select className="border rounded-lg p-2 w-[100px]">
                   <option value="weekly">Weekly</option>
@@ -77,9 +77,9 @@ export default function Activity() {
 
           <div className="bg-white border rounded-xl shadow-md p-4 space-y-4">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold">Task Summary</h2>
-              <button className="h-8 w-8 rounded-xl hover:bg-accent flex items-center justify-center">
-                <MoreHorizontal className="h-16 w-16" />
+              <h2 className="text-xl font-bold">Task Summary</h2>
+              <button className="h-8 w-8 text-horin rounded-xl hover:bg-accent flex items-center justify-center">
+                <MoreHorizontal className="h-16 w-16 text-horin" />
               </button>
             </div>
             <div className="grid gap-4 md:grid-cols-3">

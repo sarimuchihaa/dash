@@ -22,7 +22,9 @@ export default {
         Meniot:  '#94A3B8',
         Fifst:   '#2563EB',
         Sisst:   '#F472B6',
-        Thtst:   '#FBBF24'
+        Thtst:   '#FBBF24',
+        Stasks:  '#65758C',
+        
       }
     },
   },
