@@ -6,7 +6,7 @@ export const projects =
       progress: 55,
       tasksCompleted: 8,
       totalTasks: 15,
-      teamMembers: ["/placeholder.svg", "/placeholder.svg"],
+      teamMembers: ["card1.jpg", "/card2.jpeg"],
       progressColor: "bg-Fifst",
     },
     {
@@ -14,7 +14,7 @@ export const projects =
       progress: 30,
       tasksCompleted: 8,
       totalTasks: 40,
-      teamMembers: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+      teamMembers: ["/card2.jpeg", "/card1.jpg"],
       progressColor: "bg-Sisst",
     },
     {
@@ -22,7 +22,7 @@ export const projects =
       progress: 89,
       tasksCompleted: 40,
       totalTasks: 55,
-      teamMembers: ["/placeholder.svg", "/placeholder.svg"],
+      teamMembers: ["card1.jpg", "/card2.jpeg"],
       progressColor: "bg-Thtst",
     },
 ];
@@ -49,7 +49,7 @@ export const tasks =
         title: "Create userflow for Hiphonic Application Design",
         status: "in-review",
         statusLabel: "In Review",
-        assignees: ["/placeholder.svg", "/placeholder.svg"],
+        assignees: ["/card4.jpg", "/card3.jpg"],
         completed: true
     },
     {
@@ -57,7 +57,7 @@ export const tasks =
         title: "Homepage design for Dibhub Application",
         status: "progress",
         statusLabel: "Progress",
-        assignees: ["/placeholder.svg", "/placeholder.svg"],
+        assignees: ["/card3.jpg", "/card4.jpg"],
         completed: false
     }
 ]
@@ -68,22 +68,25 @@ export const messages = [
   {
     id: 1,
     sender: "Andreana Viola",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: "/message1.jpeg?height=40&width=40",
     message: "Hi, how are you today?",
     time: "08:30",
+    isOnline: true
   },
   {
     id: 2,
     sender: "Francesco Long",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: "/message2.jpeg?height=40&width=40",
     message: "Hi @Angel, I hope you are doing well...",
     time: "07:00",
+    isOnline: false
   },
   {
     id: 3,
     sender: "Alexandra Michu",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: "/message3.jpg?height=40&width=40",
     message: "Hi, how are you today?",
     time: "23/11",
+    isOnline: false
   },
 ];

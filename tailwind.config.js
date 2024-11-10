@@ -24,6 +24,8 @@ export default {
         Sisst:   '#F472B6',
         Thtst:   '#FBBF24',
         Stasks:  '#65758C',
+        card4:   '#E2E8F0',
+        mes1:    '#78869A',
         
       }
     },
