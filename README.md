@@ -1,3 +1,3 @@
 Dashboard
 
-
+public/dashboard.png
