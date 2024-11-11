@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Bolt, LayoutGrid, CheckSquare, MessageCircle, Trophy, Settings, Plus, Moon, Menu } from "lucide-react";
 import { useProjects } from "../ProjectContext/ProjectContext.jsx";
 import Popup from "../Popup/Popup.jsx";
@@ -10,18 +10,18 @@ export default function Sidebar() {
   const [newProjectName, setNewProjectName] = useState("");
   const [isAddingProject, setIsAddingProject] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [isModalOpen, setIsModalOpen] = useState(false);  // Add modal state
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleAddProject = () => {
     if (newProjectName.trim() !== "") {
-      addProject({ name: newProjectName, color: "bg-blue-500" });
       setNewProjectName("");
       setIsAddingProject(false);
     }
   };
 
-  const plusNavigate = () => {
-    setIsModalOpen(true); // Open the modal on root URL
+  const plusNavigate = (e) => {
+    e.preventDefault();
+    setIsModalOpen(true);
   };
 
   return (
@@ -122,7 +122,7 @@ export default function Sidebar() {
           </button>
           <div className="flex items-center justify-between px-3 py-2">
             <span className="text-sm flex items-center">
-              <Moon size={16} className="mr-1 w-5 h-5" />
+              <Moon size={16} className="mr-1 w-5 h-5"/>
               Dark Mode
             </span>
             <label className="relative inline-flex items-center cursor-pointer">
@@ -139,7 +139,6 @@ export default function Sidebar() {
         </nav>
       </div>
 
-      {/* Add Popup Modal here */}
       {isModalOpen && <Popup onClose={() => setIsModalOpen(false)} />}
     </div>
   );
