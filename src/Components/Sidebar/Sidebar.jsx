@@ -31,7 +31,7 @@ export default function Sidebar() {
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-white">
             <Bolt size={18} />
           </div>
-          <Link to="/" className="text-2xl py-10 font-semibold">Hiphonic</Link>
+          <Link to="/" className="text-2xl py-10 font-bold">Hiphonic</Link>
         </div>
       </div>
 

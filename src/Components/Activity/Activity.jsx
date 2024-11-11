@@ -1,13 +1,40 @@
 // IMPORTS
-import { Settings, User, CheckSquare, MoreHorizontal, ChevronUp } from "lucide-react";
+import { Settings, User, CheckSquare, MoreHorizontal, ChevronUp, Trash2 } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { activityData } from "../../utils/data.js";
-
+import { useState } from "react";
 
 
 
 // FRONTEND
 export default function Activity() {
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isMainDropdownOpen, setMainDropdownOpen] = useState(false); 
+  const [activeDropdownIndex, setActiveDropdownIndex] = useState(null); 
+
+
+  const toggleDropdown = (index) => {
+    if (activeDropdownIndex === index) {
+      setDropdownOpen(!isDropdownOpen);
+    } else {
+      setActiveDropdownIndex(index);
+      setDropdownOpen(true);
+    }
+  };
+
+
+  const toggleMainDropdown = () => {
+    setMainDropdownOpen(!isMainDropdownOpen); 
+  };
+
+
+  const closeDropdown = () => {
+    setDropdownOpen(false);
+    setActiveDropdownIndex(null);
+    setMainDropdownOpen(false); 
+  };
+
+
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -20,6 +47,7 @@ export default function Activity() {
     return null;
   };
 
+
   const CustomDot = (props) => {
     const { cx, cy, value, day } = props;
     if (day === 'Wed') {
@@ -29,6 +57,7 @@ export default function Activity() {
     }
     return null;
   };
+
 
   return (
     <div className="flex justify-center items-center min-h-[45vh] w-full">
@@ -76,11 +105,28 @@ export default function Activity() {
           </div>
 
           <div className="bg-white border rounded-xl shadow-md p-4 space-y-4">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between relative">
               <h2 className="text-xl font-bold">Task Summary</h2>
-              <button className="h-8 w-8 text-horin rounded-xl hover:bg-accent flex items-center justify-center">
+              <button
+                className="h-8 w-8 text-horin rounded-xl hover:bg-accent flex items-center justify-center"
+                onClick={toggleMainDropdown}
+              >
                 <MoreHorizontal className="h-16 w-16 text-horin" />
               </button>
+              {isMainDropdownOpen && (
+                <div className="absolute right-0 mr-8 w-40 bg-white border border-gray-300 rounded-md shadow-lg">
+                  <button
+                    className="w-full text-left text-red-600 focus:text-red-600 focus:bg-red-50 p-2 hover:bg-red-50"
+                    onClick={() => {
+                      console.log("Main action - Something clicked");
+                      closeDropdown();
+                    }}
+                  >
+                    <Trash2 className="mr-2 h-4 w-4 text-red-600" />
+                    Delete
+                  </button>
+                    </div>
+              )}
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               <div className="border rounded-xl shadow-md p-4 bg-blue-500 text-white">
@@ -109,9 +155,9 @@ export default function Activity() {
 
               <div className="border rounded-xl shadow-md p-4 bg-gray-100">
                 <div className="flex flex-col items-center gap-2">
-                  <div className="rounded-xl bg-gray-200 p-3">
+                  <button className="rounded-xl bg-gray-200 p-3" onClick={toggleMainDropdown}>
                     <CheckSquare className="h-5 w-5" />
-                  </div>
+                  </button>
                   <div className="text-center">
                     <p className="text-sm font-medium text-gray-600">Closed</p>
                     <p className="text-2xl font-bold">89</p>
@@ -119,6 +165,7 @@ export default function Activity() {
                 </div>
               </div>
             </div>
+
             <div className="border rounded-xl shadow-md p-4">
               <div className="flex items-center justify-between">
                 <div>
@@ -131,6 +178,7 @@ export default function Activity() {
                     </span>
                   </div>
                 </div>
+
                 <div className="h-[40px] w-[100px]">
                   <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={[
