@@ -2,12 +2,35 @@
 import { MoreHorizontal, CheckSquare, Trash2 } from "lucide-react";
 import { projects } from "../../utils/data.js";
 import { useState } from "react";
-
+import axios from "axios";
 
 
 
 // FRONTEND
 export default function Recent() {
+
+    const [fetchedProject, setFetchedProject] = useState(null); 
+
+
+
+    // Fetch project data by ID
+    const fetchProjectById = async (projectId) => {
+    try {
+      const response = await axios.get(`http://localhost:5000/projects/${projectId}`);
+      setFetchedProject(response.data); // Store fetched project data
+      console.log("Fetched project:", response.data); // Log the fetched project data
+    } catch (error) {
+      console.error("Error fetching project data:", error);
+    }
+  };
+
+    useEffect(() => {
+    // Example: Fetch project data for the first project when the component loads
+    fetchProjectById("6733434e962d9e172dc50cf2");
+    }, []);
+
+
+
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isMainDropdownOpen, setMainDropdownOpen] = useState(false); 
   const [activeDropdownIndex, setActiveDropdownIndex] = useState(null);
