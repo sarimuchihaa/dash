@@ -1,7 +1,7 @@
 // IMPORTS
 import { MoreHorizontal, CheckSquare, Trash2 } from "lucide-react";
 import { projects } from "../../utils/data.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 
