@@ -10,7 +10,7 @@ import { useState } from "react";
 export default function Recent() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isMainDropdownOpen, setMainDropdownOpen] = useState(false); 
-  const [activeDropdownIndex, setActiveDropdownIndex] = useState(null); 
+  const [activeDropdownIndex, setActiveDropdownIndex] = useState(null);
 
 
   const toggleDropdown = (index) => {
@@ -33,7 +33,6 @@ export default function Recent() {
     setActiveDropdownIndex(null);
     setMainDropdownOpen(false); 
   };
-
 
 
   return (
