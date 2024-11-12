@@ -1,9 +1,6 @@
 import mongoose, {Schema} from "mongoose";
 
 const messageSchema = new Schema({
-    messageId: {
-        type: Number
-    },
     content: {
         type: String
     },
@@ -16,12 +13,10 @@ const messageSchema = new Schema({
     senderId: {
         type: Schema.Types.ObjectId,
         ref: 'User', 
-        required: true
     },
     receiverId: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true
     },
 }, {timestamps: true});
 

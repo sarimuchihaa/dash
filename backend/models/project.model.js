@@ -5,15 +5,12 @@ const projectSchema = new Schema({
         type: String,
         required: true
     },
-    projectId: {
-        type: Number
-    },
     description: {
         type: String
     },
     status: {
         type: String,
-        enum: ['in-review', 'in-progress', 'done'],
+        enum: ['in-review', 'in-progress', 'done', 'to-do'],
         default: 'in-progress',
     },
     startDate: {
@@ -27,7 +24,6 @@ const projectSchema = new Schema({
     members: [{
         type: Schema.Types.ObjectId,
         ref: 'User', 
-        required: true
     }],
     // Messages References.
     messages: [{
@@ -42,4 +38,3 @@ const projectSchema = new Schema({
 }, {timestamps:true});
 
 export const Project = mongoose.model("Project", projectSchema)
-

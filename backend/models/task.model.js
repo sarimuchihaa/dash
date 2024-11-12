@@ -5,9 +5,6 @@ const taskSchema = new Schema({
         type: String,
         required: true, 
     },
-    taskId: {
-        type: Number
-    },
     description: {
         type: String
     },
@@ -23,12 +20,11 @@ const taskSchema = new Schema({
     },
     status: {
         type: String,
-        enum: ['in-review', 'in-progress', 'done'],
+        enum: ['in-review', 'in-progress', 'done', 'to-do'],
         default: 'in-progress',
     },
     dueDate: {
         type: Date,
-        required: false,
     },
     projectId: {
         type: Schema.Types.ObjectId,

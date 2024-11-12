@@ -5,10 +5,6 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
-    userId: {
-        type: Number,
-        required: true
-    },
     role: {
         type: String,
         enum: ['user', 'admin'],
