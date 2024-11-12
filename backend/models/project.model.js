@@ -10,7 +10,7 @@ const projectSchema = new Schema({
     },
     status: {
         type: String,
-        enum: ['in-review', 'in-progress', 'done', 'to-do'],
+        enum: ['in-review', 'in-progress', 'done', 'to-do', 'In Progress', 'In Review'],
         default: 'in-progress',
     },
     startDate: {

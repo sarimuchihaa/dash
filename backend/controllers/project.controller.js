@@ -3,7 +3,7 @@ import { Project } from "../models/project.model.js";
 
 // POST
 const registerProject = async (req, res) => {
-    const { projectName, description, status, startDate, endDate } = req.body;
+    const { projectName, description, status, startDate, endDate, members, messages, tasks } = req.body;
 
 
     // Check if all required fields are provided.
@@ -27,10 +27,10 @@ const registerProject = async (req, res) => {
             status,
             startDate,
             endDate,
-
+            members,
+            messages,
+            tasks
         });
-
-
 
         // Save project.
         await newProject.save();

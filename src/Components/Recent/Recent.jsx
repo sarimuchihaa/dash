@@ -35,6 +35,9 @@ export default function Recent() {
   };
 
 
+  
+
+
   return (
     <div className="flex justify-center sm:justify-start items-center min-h-[45vh] bg-white w-full">
       <div className="bg-white p-8 lg:p-4 border-2 rounded-lg shadow-lg sm:w-full md:w-1/3 lg:w-1/2 xl:w-4/5 2xl:w-full m-6 min-h-[40vh]">
