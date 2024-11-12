@@ -1,16 +1,17 @@
+// IMPORTS
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Bolt, LayoutGrid, CheckSquare, MessageCircle, Trophy, Settings, Plus, Moon, Menu } from "lucide-react";
 import { useProjects } from "../ProjectContext/ProjectContext.jsx";
 import Popup from "../Popup/Popup.jsx";
 
+// FRONTEND
 export default function Sidebar() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const { projects } = useProjects();
   const [newProjectName, setNewProjectName] = useState("");
   const [isAddingProject, setIsAddingProject] = useState(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
 
   const handleAddProject = () => {
     if (newProjectName.trim() !== "") {
@@ -19,13 +20,16 @@ export default function Sidebar() {
     }
   };
 
-  const plusNavigate = (e) => {
-    e.preventDefault();
+  const openModal = () => {
     setIsModalOpen(true);
   };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
-    <div className={`flex h-screen ${isSidebarOpen ? 'w-[270px]' : 'w-0'} flex-col border-r transition-all duration-300 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`} style={{ position: 'sticky', top: '0' }}>
+    <div className={`flex h-screen w-[270px] flex-col border-r transition-all duration-300 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>
       <div className="p-6">
         <div className="flex items-center gap-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-white">
@@ -37,7 +41,7 @@ export default function Sidebar() {
 
       {/* Hamburger icon for mobile */}
       <div className="sm:hidden p-4">
-        <button onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+        <button>
           <Menu size={24} />
         </button>
       </div>
@@ -73,7 +77,7 @@ export default function Sidebar() {
               <span className="text-Meniot font-bold px-2 text-md py-2 tracking-wider">
                 PROJECTS
               </span>
-              <button className="h-6 w-6" onClick={plusNavigate}>
+              <button className="h-6 w-6 add-project-button" onClick={openModal}>
                 <Plus size={16} style={{ color: '#2563EB' }} />
               </button>
             </div>
@@ -139,7 +143,8 @@ export default function Sidebar() {
         </nav>
       </div>
 
-      {isModalOpen && <Popup onClose={() => setIsModalOpen(false)} />}
+      {/* Render the Popup component conditionally based on isModalOpen */}
+      {isModalOpen && <Popup onClose={closeModal} />}
     </div>
   );
 }
