@@ -6,7 +6,6 @@ import axios from "axios";
 
 
 
-
 // FRONTEND
 export default function Navbar() {
 
@@ -19,7 +18,7 @@ export default function Navbar() {
       try {
         const response = await axios.get(`http://localhost:5000/users/${userId}`);
         setUser(response.data); // Store user data in state.
-        console.log("Fetched user data:", response.data); // Log user data in console.
+        console.log("Fetched user data:", response.data); 
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
@@ -51,8 +50,8 @@ export default function Navbar() {
           </button>
 
 
-  {/* Check if user data is available before rendering */}
-  {user ? (
+        {/* Check if user data is available before rendering. */}
+        {user ? (
           <div className="relative">
             <button className="flex items-center space-x-3 px-4 text-2xl text-gray-700 hover:bg-gray-100 rounded-md"> 
               <div className="h-10 w-10 rounded-full overflow-hidden bg-gray-200"> 
@@ -66,7 +65,7 @@ export default function Navbar() {
             </button>
           </div>
           ) : (
-            // Display a loading state or a fallback message
+            // Loading state.
             <div className="text-gray-500">Loading...</div>
           )}
         </div>
