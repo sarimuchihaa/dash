@@ -97,5 +97,6 @@ export const message = [
   {id: 1, sender: "Alexandra Michu", content: "Hi, How are you today?", time: "9:00 AM", type: "received" },
   { id: 2, sender: "You", content: "Hello Michu, I'm fine. How about you?", time: "9:10 AM", type: "sent" },
   { id: 3, sender: "Alexandra Michu", content: "Can you send a sample from a reference?", time: "9:11 AM", type: "received" },
-  { id: 4, sender: "You", content: "This is the reference we will use", time: "10:10 AM", type: "sent", images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"] },
+  { id: 4, sender: "You", content: "This is the reference we will use", time: "10:10 AM", type: "sent", images: ["/message3.jpg", "/placeholder.svg", "/placeholder.svg"] },
 ];
+

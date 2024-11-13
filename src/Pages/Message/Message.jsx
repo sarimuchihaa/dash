@@ -1,5 +1,5 @@
 import React from "react"
-import { MessageCircle, Phone, Video, MoreVertical, Plus, Search, Paperclip, Send, Smile, Trash } from "lucide-react"
+import { MessageCircle, Phone, Video, MoreVertical, Plus, Search, Paperclip, Send, Smile, Trash, Layout } from "lucide-react"
 
 export default function Message() {
   const [messages, setMessages] = React.useState([
@@ -55,9 +55,9 @@ export default function Message() {
         {/* Chat Header */}
         <div className="bg-white border-b p-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-white">AM</div>
+            <img src="/message1.jpeg" alt="Alexandra Michu" className="w-10 h-10 rounded-full object-cover" />
             <div>
-              <div className="font-medium">Alexandra Michu</div>
+              <div className="font-bold" style={{color: '#0F172A'}}>Alexandra Michu</div>
               <div className="text-sm text-gray-500 flex items-center gap-1">
                 <div className="w-2 h-2 rounded-full bg-green-500"></div>
                 Online
@@ -65,9 +65,9 @@ export default function Message() {
             </div>
           </div>
           <div className="flex gap-2">
-            <button className="p-2 rounded-full hover:bg-gray-200"><Phone className="h-4 w-4" /></button>
-            <button className="p-2 rounded-full hover:bg-gray-200"><Video className="h-4 w-4" /></button>
-            <button className="p-2 rounded-full hover:bg-gray-200"><MoreVertical className="h-4 w-4" /></button>
+            <button className="p-2 rounded-full hover:bg-gray-200"><Phone className="h-6 w-6" style={{color: '#64748B'}} /></button>
+            <button className="p-2 rounded-full hover:bg-gray-200"><Layout className="h-6 w-6" style={{ color: '#2563EB' }} /></button>
+            <button className="p-2 rounded-full hover:bg-gray-200"><MoreVertical className="h-6 w-6" style={{color: '#64748B'}} /></button>
           </div>
         </div>
 

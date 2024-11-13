@@ -63,7 +63,7 @@ export default function Sidebar() {
             <nav className="space-y-1">
             <button
                 className={`flex w-full justify-start gap-2 p-2 text-left hover:bg-accent ${activeItem === "dashboard" ? 'bg-[#E5E7EB]' : ''}`}
-                onClick={() => {myNavigate("/dashboard"); setActiveItem("dashboard"); }}
+                onClick={() => {myNavigate("/"); setActiveItem("dashboard"); }}
                 style={activeItem === "dashboard" ? { color: '#2563EB', fontWeight: 'bold' } : {}}
               >
                 <LayoutGrid size={20} className="mt-1" style={activeItem === "dashboard" ? { color: '#2563EB' } : {}} />
