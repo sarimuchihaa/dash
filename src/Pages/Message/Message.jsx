@@ -1,26 +1,33 @@
+// IMPORTS
 import React from "react"
-import { MessageCircle, Phone, Video, MoreVertical, Plus, Search, Paperclip, Send, Smile, Trash, Layout } from "lucide-react"
+import { MessageCircle, Phone, MoreVertical, Plus, Search, Paperclip, Send, Smile, Trash, Layout } from "lucide-react"
 
+
+
+
+
+// FRONTEND
 export default function Message() {
-  const [messages, setMessages] = React.useState([
-    { id: 1, sender: "Alexandra Michu", content: "Hi, How are you today?", time: "9:00 AM", type: "received" },
-    { id: 2, sender: "You", content: "Hello Michu, I'm fine. How about you?", time: "9:10 AM", type: "sent" },
-    { id: 3, sender: "Alexandra Michu", content: "Can you send a sample from a reference?", time: "9:11 AM", type: "received" },
-    { id: 4, sender: "You", content: "This is the reference we will use", time: "10:10 AM", type: "sent", images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"] },
+  const [message, setMessages] = React.useState([
+    { id: 1, sender: "Alexandra Michu", content: "Hi, How are you today?",                  time: "9:00 AM",  type: "received", profileImage: "/message1.jpeg" },
+    { id: 2, sender: "You",             content: "Hello Michu, I'm fine. How about you?",   time: "9:10 AM",  type: "sent",     profileImage: "/angela.jpg", },
+    { id: 3, sender: "Alexandra Michu", content: "Can you send a sample from a reference?", time: "9:11 AM",  type: "received", profileImage: "/message1.jpeg" },
+    { id: 4, sender: "You",             content: "This is the reference we will use",       time: "10:10 AM", type: "sent",     profileImage: "/angela.jpg",      images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"] },
+    { id: 1, sender: "Alexandra Michu", content: "....",                                    time: "10:40 AM",  type: "received", profileImage: "/message1.jpeg" },
   ])
 
   const [inputMessage, setInputMessage] = React.useState("")
 
   const handleSendMessage = () => {
     if (inputMessage.trim()) {
-      setMessages([...messages, { id: messages.length + 1, sender: "You", content: inputMessage, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), type: "sent" }])
+      setMessages([...message, { id: message.length + 1, sender: "You", content: inputMessage, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), type: "sent" }])
       setInputMessage("")
     }
   }
 
   return (
     <div className="flex h-screen bg-gray-100">
-      {/* Left Sidebar */}
+      {/* LEFT SIDEBAR */}
       <div className="w-64 bg-white border-r">
         <div className="p-4">
           <h1 className="text-2xl font-bold mb-4">Chat</h1>
@@ -50,9 +57,12 @@ export default function Message() {
         </div>
       </div>
 
-      {/* Main Chat Area */}
+
+
+
+      {/* MAIN CHAT AREA */}
       <div className="flex-1 flex flex-col">
-        {/* Chat Header */}
+        {/* CHAT HEADER */}
         <div className="bg-white border-b p-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img src="/message1.jpeg" alt="Alexandra Michu" className="w-10 h-10 rounded-full object-cover" />
@@ -71,12 +81,22 @@ export default function Message() {
           </div>
         </div>
 
-        {/* Chat Messages */}
+
+
+
+        {/* CHAT MESSAGE */}
         <div className="flex-1 p-4 overflow-y-auto">
-          {messages.map((message) => (
+          {message.map((message) => (
             <div key={message.id} className={`flex ${message.type === 'sent' ? 'justify-end' : 'justify-start'} mb-4`}>
               <div className={`flex gap-3 max-w-[70%] ${message.type === 'sent' ? 'flex-row-reverse' : ''}`}>
-                <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-white">{message.sender[0]}</div>
+                {/* USER AVATAR */}
+                <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-white">
+                  {message.profileImage ? (
+                 <img src={message.profileImage} alt={message.sender} className="w-full h-full object-cover rounded-full" />
+                 ) : (
+                  message.sender[0] // Fallback to first letter of sender name.
+                )}
+        </div>
                 <div>
                   <div className={`rounded-lg p-3 ${message.type === 'sent' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}>
                     {message.content}
@@ -95,7 +115,10 @@ export default function Message() {
           ))}
         </div>
 
-        {/* Message Input */}
+        
+
+
+        {/* MESSAGE INPUT */}
         <div className="bg-white border-t p-4 flex items-center gap-2">
           <button className="p-2 rounded-full hover:bg-gray-200"><Paperclip className="h-4 w-4" /></button>
           <input 
@@ -110,7 +133,10 @@ export default function Message() {
         </div>
       </div>
 
-      {/* Right Sidebar - User Info */}
+
+
+
+      {/* RIGHT SIDEBAR - USER INFO */}
       <div className="w-64 bg-white border-l p-4">
         <div className="bg-gray-100 p-6 rounded text-center">
           <div className="w-20 h-20 bg-gray-300 rounded-full mx-auto flex items-center justify-center text-white text-2xl">AM</div>
