@@ -1,6 +1,6 @@
 // IMPORTS
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Bolt, LayoutGrid, CheckSquare, MessageCircle, Trophy, Settings, Plus, Moon, Menu } from "lucide-react";
 import { useProjects } from "../ProjectContext/ProjectContext.jsx";
 import Popup from "../Popup/Popup.jsx";
@@ -11,7 +11,9 @@ export default function Sidebar() {
   const { projects } = useProjects();
   const [newProjectName, setNewProjectName] = useState("");
   const [isAddingProject, setIsAddingProject] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState("dashboard");
+  
 
   const handleAddProject = () => {
     if (newProjectName.trim() !== "") {
@@ -27,6 +29,12 @@ export default function Sidebar() {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+
+  // NAVIGATION
+  const myNavigate = useNavigate();
+
+
 
   return (
     <div className={`flex h-screen w-[270px] flex-col border-r transition-all duration-300 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>
@@ -53,16 +61,24 @@ export default function Sidebar() {
               MENU
             </div>
             <nav className="space-y-1">
-              <Link to="/" className="flex w-full justify-start gap-2 p-2 text-left hover:bg-accent" style={{ backgroundColor: '#E5E7EB' }}>
-                <LayoutGrid size={20} className="mt-1" style={{ color: '#2563EB' }} />
-                <span style={{ color: '#2563EB' }} className="font-bold mb-2">Dashboard</span>
-              </Link>
+            <button
+                className={`flex w-full justify-start gap-2 p-2 text-left hover:bg-accent ${activeItem === "dashboard" ? 'bg-[#E5E7EB]' : ''}`}
+                onClick={() => {myNavigate("/dashboard"); setActiveItem("dashboard"); }}
+                style={activeItem === "dashboard" ? { color: '#2563EB', fontWeight: 'bold' } : {}}
+              >
+                <LayoutGrid size={20} className="mt-1" style={activeItem === "dashboard" ? { color: '#2563EB' } : {}} />
+                <span className="mb-2">Dashboard</span>
+              </button>
               <button className="flex w-full justify-start gap-2 p-2 text-left hover:bg-accent">
                 <CheckSquare className="mt-2" size={20} />
                 <span className="mt-2">My Tasks</span>
               </button>
-              <button className="flex w-full justify-start gap-2 p-2 text-left hover:bg-accent">
-                <MessageCircle className="mt-2" size={20} />
+              <button
+                className={`flex w-full justify-start gap-2 p-2 text-left hover:bg-accent ${activeItem === "message" ? 'bg-[#E5E7EB]' : ''}`}
+                onClick={() => { myNavigate("/message"); setActiveItem("message"); }}
+                style={activeItem === "message" ? { color: '#2563EB', fontWeight: 'bold' } : {}}
+              >
+                <MessageCircle className="mt-2" size={20} style={activeItem === "message" ? { color: '#2563EB' } : {}} />
                 <span className="mt-2">Message</span>
               </button>
               <button className="flex w-full justify-start gap-2 p-2 text-left hover:bg-accent">

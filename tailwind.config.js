@@ -26,6 +26,8 @@ export default {
         Stasks:  '#65758C',
         card4:   '#E2E8F0',
         mes1:    '#78869A',
+        mess:    "#ffffff",
+        
         
       }
     },

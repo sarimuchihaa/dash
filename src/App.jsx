@@ -25,7 +25,7 @@ function App() {
             <MyTasks />
           </>
           }/>
-          <Route path="/messages" element={<Message />} />
+          <Route path="/message" element={<Message />} />
         </Routes>
       </Layout>
     </Router>
